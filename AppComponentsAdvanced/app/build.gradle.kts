@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.appnavigationscreen"
+    namespace = "com.example.appcomponentsadvanced"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.appnavigationscreen"
+        applicationId = "com.example.appcomponentsadvanced"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation("androidx.constraintlayout:constraintlayout-compose:1.1.1")
     implementation("androidx.navigation:navigation-compose:2.9.8")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
