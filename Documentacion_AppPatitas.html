@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentación Técnica - App Patitas Compose</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            color: #000;
+        }
+        h1 {
+            color: #1a1a1a;
+            font-size: 24pt;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            page-break-after: avoid;
+        }
+        h2 {
+            color: #333;
+            font-size: 16pt;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            page-break-after: avoid;
+        }
+        h3 {
+            color: #444;
+            font-size: 14pt;
+            margin-top: 20px;
+            page-break-after: avoid;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #e0e0e0;
+            font-weight: bold;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 10pt;
+        }
+        .tree {
+            font-family: 'Courier New', monospace;
+            font-size: 8pt;
+            white-space: pre;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+            page-break-inside: avoid;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 30px 0;
+        }
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 10pt;
+            margin-top: 40px;
+            page-break-before: avoid;
+        }
+        p {
+            margin: 10px 0;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+<h1>DOCUMENTO TÉCNICO - APP PATITAS COMPOSE</h1>
+
+<h2>1. INFORMACIÓN GENERAL DEL PROYECTO</h2>
+
+<p><strong>Nombre del Proyecto:</strong> App Patitas Compose<br>
+<strong>Paquete:</strong> pe.idat.apppatitas_compose<br>
+<strong>Versión:</strong> 1.0<br>
+<strong>Versión de Código:</strong> 1</p>
+
+<h2>2. TECNOLOGÍAS UTILIZADAS</h2>
+
+<h3>2.1 Framework y Lenguaje</h3>
+<table>
+    <tr>
+        <th>Tecnología</th>
+        <th>Versión</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td><strong>Kotlin</strong></td>
+        <td>1.9.0</td>
+        <td>Lenguaje de programación principal</td>
+    </tr>
+    <tr>
+        <td><strong>Android SDK</strong></td>
+        <td>Compile SDK 34</td>
+        <td>SDK de compilación</td>
+    </tr>
+    <tr>
+        <td><strong>Min SDK</strong></td>
+        <td>24</td>
+        <td>Versión mínima de Android soportada (Android 7.0)</td>
+    </tr>
+    <tr>
+        <td><strong>Target SDK</strong></td>
+        <td>34</td>
+        <td>Versión objetivo de Android</td>
+    </tr>
+    <tr>
+        <td><strong>Android Gradle Plugin</strong></td>
+        <td>8.5.0</td>
+        <td>Plugin de Gradle para Android</td>
+    </tr>
+</table>
+
+<h3>2.2 Frameworks y Librerías de Desarrollo</h3>
+<table>
+    <tr>
+        <th>Tecnología</th>
+        <th>Versión</th>
+        <th>Propósito</th>
+    </tr>
+    <tr>
+        <td><strong>Jetpack Compose</strong></td>
+        <td>BOM 2024.04.01</td>
+        <td>Framework moderno de UI declarativa</td>
+    </tr>
+    <tr>
+        <td><strong>Compose Material 3</strong></td>
+        <td>1.6.8</td>
+        <td>Biblioteca de componentes Material Design 3</td>
+    </tr>
+    <tr>
+        <td><strong>Hilt</strong></td>
+        <td>2.48</td>
+        <td>Framework de inyección de dependencias</td>
+    </tr>
+    <tr>
+        <td><strong>Retrofit</strong></td>
+        <td>2.9.0</td>
+        <td>Cliente HTTP para APIs REST</td>
+    </tr>
+    <tr>
+        <td><strong>Gson Converter</strong></td>
+        <td>2.9.0</td>
+        <td>Serializador/Deserializador JSON</td>
+    </tr>
+    <tr>
+        <td><strong>Room</strong></td>
+        <td>2.6.1</td>
+        <td>Base de datos local SQLite</td>
+    </tr>
+    <tr>
+        <td><strong>Navigation Compose</strong></td>
+        <td>2.7.7</td>
+        <td>Biblioteca de navegación entre pantallas</td>
+    </tr>
+    <tr>
+        <td><strong>Coil</strong></td>
+        <td>2.0.0</td>
+        <td>Carga y cacheo de imágenes</td>
+    </tr>
+    <tr>
+        <td><strong>Lifecycle Runtime</strong></td>
+        <td>2.8.3</td>
+        <td>Ciclo de vida de componentes Android</td>
+    </tr>
+    <tr>
+        <td><strong>Activity Compose</strong></td>
+        <td>1.9.0</td>
+        <td>Integración de Compose con Activity</td>
+    </tr>
+    <tr>
+        <td><strong>Material Icons Extended</strong></td>
+        <td>1.6.8</td>
+        <td>Biblioteca extendida de iconos Material</td>
+    </tr>
+</table>
+
+<h2>3. ARQUITECTURA DEL PROYECTO</h2>
+
+<h3>3.1 Patrón de Diseño</h3>
+<p>La aplicación utiliza <strong>Clean Architecture</strong> con el patrón <strong>MVVM</strong> (Model-View-ViewModel), estructurado en tres capas:</p>
+
+<ul>
+    <li><strong>UI Layer (Capa de Presentación):</strong> Composables y ViewModels</li>
+    <li><strong>Domain Layer (Capa de Dominio):</strong> Casos de uso (Use Cases)</li>
+    <li><strong>Data Layer (Capa de Datos):</strong> Repositorios, Servicios y Entidades</li>
+</ul>
+
+<h3>3.2 Estructura de Capas</h3>
+<table>
+    <tr>
+        <th>Capa</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td><strong>auth</strong></td>
+        <td>Módulo de autenticación (Login y Registro)</td>
+    </tr>
+    <tr>
+        <td><strong>home</strong></td>
+        <td>Módulo principal (Gestión de mascotas y voluntarios)</td>
+    </tr>
+    <tr>
+        <td><strong>core</strong></td>
+        <td>Utilidades compartidas (BD, Retrofit, Navegación)</td>
+    </tr>
+    <tr>
+        <td><strong>ui/theme</strong></td>
+        <td>Tema visual de la aplicación</td>
+    </tr>
+</table>
+
+<h2>4. ESTRUCTURA COMPLETA DEL PROYECTO</h2>
+
+<div class="tree">apppatitas-compose/
+├── .gradle/
+│   └── 8.7/
+├── .idea/
+├── app/
+│   ├── build.gradle.kts
+│   ├── proguard-rules.pro
+│   └── src/
+│       ├── main/
+│       │   ├── AndroidManifest.xml
+│       │   ├── java/pe/idat/apppatitas_compose/
+│       │   │   ├── MiApp.kt
+│       │   │   ├── MainActivity.kt
+│       │   │   ├── auth/
+│       │   │   │   ├── data/
+│       │   │   │   │   ├── network/
+│       │   │   │   │   │   ├── request/
+│       │   │   │   │   │   │   ├── LoginRequest.kt
+│       │   │   │   │   │   └── RegistroRequest.kt
+│       │   │   │   │   │   └── response/
+│       │   │   │   │   │       ├── LoginResponse.kt
+│       │   │   │   │   │       └── RegistroResponse.kt
+│       │   │   │   │   ├── service/
+│       │   │   │   │   │   └── AuthService.kt
+│       │   │   │   │   └── repository/
+│       │   │   │   │       ├── AuthRepository.kt
+│       │   │   │   │       └── PersonaAuthRepository.kt
+│       │   │   │   ├── domain/
+│       │   │   │   │   ├── LoginUseCase.kt
+│       │   │   │   │   ├── RegistroUseCase.kt
+│       │   │   │   │   └── RegistroPersonaUseCase.kt
+│       │   │   │   └── view/
+│       │   │   │       ├── LoginScreen.kt
+│       │   │   │       ├── RegistroScreen.kt
+│       │   │   │       └── viewmodel/
+│       │   │   │           ├── LoginViewModel.kt
+│       │   │   │           └── RegistroViewModel.kt
+│       │   │   ├── home/
+│       │   │   │   ├── data/
+│       │   │   │   │   ├── network/
+│       │   │   │   │   │   ├── request/
+│       │   │   │   │   │   │   └── VoluntarioRequest.kt
+│       │   │   │   │   │   └── response/
+│       │   │   │   │   │       ├── MascotaResponse.kt
+│       │   │   │   │   │       └── VoluntarioResponse.kt
+│       │   │   │   │   ├── service/
+│       │   │   │   │   │   └── MascotaService.kt
+│       │   │   │   │   └── repository/
+│       │   │   │   │       ├── MascotaRepository.kt
+│       │   │   │   │       └── PersonaHomeRepository.kt
+│       │   │   │   ├── domain/
+│       │   │   │   │   ├── MascotaUseCase.kt
+│       │   │   │   │   ├── ObtenerPersonaUseCase.kt
+│       │   │   │   │   ├── ActualizarPersonaUseCase.kt
+│       │   │   │   │   ├── EliminarPersonaUseCase.kt
+│       │   │   │   │   └── VoluntarioUseCase.kt
+│       │   │   │   └── view/
+│       │   │   │       ├── HomeScreen.kt
+│       │   │   │       ├── MascotaScreen.kt
+│       │   │   │       ├── VoluntarioScreen.kt
+│       │   │   │       └── viewmodel/
+│       │   │   │           ├── MascotaViewModel.kt
+│       │   │   │           └── VoluntarioViewModel.kt
+│       │   │   ├── core/
+│       │   │   │   ├── bd/
+│       │   │   │   │   ├── PersonaEntity.kt
+│       │   │   │   │   ├── PersonaDao.kt
+│       │   │   │   │   ├── PatitasDatabase.kt
+│       │   │   │   │   └── PatitasDbModule.kt
+│       │   │   │   ├── retrofit/
+│       │   │   │   │   ├── PatitasClient.kt
+│       │   │   │   │   └── RetrofitModule.kt
+│       │   │   │   ├── ruta/
+│       │   │   │   │   └── RutaPatitas.kt
+│       │   │   │   └── util/
+│       │   │   │       ├── Evento.kt
+│       │   │   │       └── MenuItem.kt
+│       │   │   └── ui/theme/
+│       │   │       ├── Color.kt
+│       │   │       ├── Theme.kt
+│       │   │       └── Type.kt
+│       │   └── res/
+│       │       ├── drawable/
+│       │       ├── mipmap-mdpi/
+│       │       ├── mipmap-hdpi/
+│       │       ├── mipmap-xhdpi/
+│       │       ├── mipmap-xxhdpi/
+│       │       ├── mipmap-xxxhdpi/
+│       │       ├── mipmap-anydpi-v26/
+│       │       ├── values/
+│       │       │   ├── colors.xml
+│       │       │   ├── strings.xml
+│       │       │   └── themes.xml
+│       │       └── xml/
+│       │           ├── backup_rules.xml
+│       │           └── data_extraction_rules.xml
+│       ├── test/
+│       └── androidTest/
+├── gradle/
+│   └── libs.versions.toml
+├── build.gradle.kts
+├── settings.gradle.kts
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+└── local.properties</div>
+
+<h2>5. PERMISOS Y CONFIGURACIÓN</h2>
+
+<h3>5.1 Permisos</h3>
+<table>
+    <tr>
+        <th>Permiso</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td>INTERNET</td>
+        <td>Permite el acceso a red para consumir APIs REST</td>
+    </tr>
+</table>
+
+<h3>5.2 Componentes de la Aplicación</h3>
+<table>
+    <tr>
+        <th>Componente</th>
+        <th>Clase</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td>Aplicación</td>
+        <td>MiApp</td>
+        <td>Clase principal con anotación @HiltAndroidApp</td>
+    </tr>
+    <tr>
+        <td>Actividad Principal</td>
+        <td>MainActivity</td>
+        <td>Actividad principal de la aplicación</td>
+    </tr>
+</table>
+
+<h2>6. DESCRIPCIÓN DE MÓDULOS</h2>
+
+<h3>6.1 Módulo auth (Autenticación)</h3>
+<p>Encargado de la gestión de usuarios:</p>
+<ul>
+    <li><strong>Login:</strong> Pantalla de inicio de sesión</li>
+    <li><strong>Registro:</strong> Pantalla de registro de nuevos usuarios</li>
+    <li><strong>Servicios:</strong> AuthService para comunicación con API</li>
+    <li><strong>Repositorios:</strong> AuthRepository, PersonaAuthRepository</li>
+</ul>
+
+<h3>6.2 Módulo home (Principal)</h3>
+<p>Gestión de contenido principal:</p>
+<ul>
+    <li><strong>HomeScreen:</strong> Pantalla principal de la aplicación</li>
+    <li><strong>MascotaScreen:</strong> Gestión de mascotas</li>
+    <li><strong>VoluntarioScreen:</strong> Gestión de voluntarios</li>
+    <li><strong>Servicios:</strong> MascotaService para comunicación con API</li>
+    <li><strong>Repositorios:</strong> MascotaRepository, PersonaHomeRepository</li>
+</ul>
+
+<h3>6.3 Módulo core (Utilidades)</h3>
+<p>Configuraciones y utilidades compartidas:</p>
+<ul>
+    <li><strong>bd/:</strong> Configuración de Room Database (PatitasDatabase)</li>
+    <li><strong>retrofit/:</strong> Configuración del cliente HTTP (PatitasClient)</li>
+    <li><strong>ruta/:</strong> Definición de rutas de navegación</li>
+    <li><strong>util/:</strong> Utilidades generales (Evento, MenuItem)</li>
+</ul>
+
+<h2>7. RECURSOS</h2>
+
+<h3>7.1 Recursos de Valores</h3>
+<table>
+    <tr>
+        <th>Archivo</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td>colors.xml</td>
+        <td>Definición de colores de la aplicación</td>
+    </tr>
+    <tr>
+        <td>strings.xml</td>
+        <td>Cadenas de texto de la aplicación</td>
+    </tr>
+    <tr>
+        <td>themes.xml</td>
+        <td>Definición de temas y estilos</td>
+    </tr>
+</table>
+
+<h3>7.2 Recursos Drawable</h3>
+<ul>
+    <li>ic_launcher_background.xml</li>
+    <li>ic_launcher_foreground.xml</li>
+    <li>imgsplash.png</li>
+    <li>imgperfil.png</li>
+</ul>
+
+<h3>7.3 Recursos mipmap</h3>
+<p>Iconos de la aplicación en diferentes densidades (mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi) y versión adaptativa para Android 8.0+</p>
+
+<h2>8. CONFIGURACIÓN DE BUILD</h2>
+
+<h3>8.1 Build Types</h3>
+<ul>
+    <li><strong>Debug:</strong> Configuración de desarrollo</li>
+    <li><strong>Release:</strong> Configuración de producción (minifyEnabled = false)</li>
+</ul>
+
+<h3>8.2 Compiladores</h3>
+<ul>
+    <li><strong>Kotlin Compiler Extension:</strong> 1.5.1 (para Compose)</li>
+    <li><strong>Java Compatibility:</strong> VERSION_1_8</li>
+</ul>
+
+<h2>9. HERRAMIENTAS DE DESARROLLO</h2>
+
+<ul>
+    <li><strong>IDE:</strong> Android Studio / IntelliJ IDEA</li>
+    <li><strong>Build System:</strong> Gradle (wrapper)</li>
+    <li><strong>Control de Versiones:</strong> Git</li>
+</ul>
+
+<hr>
+<div class="footer">
+    <p><em>Documento generado automáticamente para App Patitas Compose</em></p>
+    <p><em>Fecha de generación: Mayo 2026</em></p>
+</div>
+
+</body>
+</html>
