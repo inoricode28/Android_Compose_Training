@@ -62,6 +62,7 @@ para liberar la internet en el manifest:
 Este causa error
 androidx-material3 = { group = "androidx.compose.material3:material3-android", name = "material3" }
 
+final
 
 
 
